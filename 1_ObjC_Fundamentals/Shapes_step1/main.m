@@ -7,9 +7,11 @@ int main(int argc, char **argv) {
 
     @autoreleasepool {
         Circle *myCircle = [[Circle createInstanceCircle] initWithRadius:5];
+        Circle *newMyCircle = [[Circle createInstanceCircle] initWithRadius:6];
         [myCircle area];
         [myCircle perim];
         NSLog(@"%@", [myCircle description]);
+        NSLog(@"%@", [myCircle isEqual:newMyCircle] ? @"YES" : @"NO");
 
         Rectangle *myRectangle = [[Rectangle createInstanceRectangle] initWithWidth:5 initWithLength:4];
         [myRectangle area];

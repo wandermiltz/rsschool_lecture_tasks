@@ -14,7 +14,7 @@
 - (instancetype)initWithA:(float)a initWithB:(float)b initWithC:(float)c{
     self = [super init];
     if (self) {
-        if (a < 0 || b < 0 || c < 0) {
+        if (a < 0 || b < 0 || c < 0 || a >= b + c) {
         return nil;
       }
         _a = a;

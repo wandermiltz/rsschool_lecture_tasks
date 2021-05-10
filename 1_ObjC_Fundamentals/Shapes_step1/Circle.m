@@ -10,7 +10,6 @@
 
 @implementation Circle 
 
-// provide init with radius, validate for negative value:
 - (instancetype)initWithRadius:(float)radius{
     self = [super init];
     if (self) {
@@ -36,11 +35,22 @@
     return _perim;
 }
 
-// - (BOOL)isEqual {
-    
-// }
+- (BOOL)isEqual:(id)other {
 
-// - (BOOL)isEqualToCircle:(Circle *)other{
+    if (other == self) {
+      return YES;
+    }
+    if (![other isKindOfClass: Circle.class]) {
+        return NO;
+    }
+     return [self isEqualToCircle:(Circle *) other];
+}
 
-// }
+-(BOOL)isEqualToCircle:(Circle *) other {
+
+    NSString * selfAreaToString = [NSString stringWithFormat:@"%f", self.area];
+    NSString * otherAreaToString = [NSString stringWithFormat:@"%f", other.area];
+
+    return [selfAreaToString isEqualToString: otherAreaToString];
+}
 @end
